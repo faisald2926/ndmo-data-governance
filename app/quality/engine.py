@@ -76,7 +76,7 @@ def scan_dataframe(file_name: str, df: pd.DataFrame):
 
     def add(dim, row, col, defect, desc):
         counts[dim] += 1
-        findings.append({"file": file_name, "row_id": _rid(file_name, row), "column": col,
+        findings.append({"source_file": file_name, "row_id": _rid(file_name, row), "column": col,
                          "dq_dimension": dim, "defect_type": defect, "description": desc})
 
     for _, row in df.iterrows():
