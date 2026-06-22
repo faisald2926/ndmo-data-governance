@@ -1,0 +1,11 @@
+# Ollama Modelfile for ALLaM-7B built from the OFFICIAL HUMAIN safetensors.
+# Use this only if you'd rather run the exact weights you downloaded instead of
+# `ollama pull iKhalid/ALLaM:7b`. The chat template is embedded by the GGUF
+# conversion (from tokenizer_config.json), so we don't override it here.
+#
+#   1) bash scripts/convert_to_gguf.sh  <path-to-safetensors-dir>
+#   2) ollama create allam-7b -f ollama/Modelfile
+#   3) set LLM_MODEL=allam-7b in .env
+FROM ./allam-7b-q4_k_m.gguf
+PARAMETER temperature 0
+PARAMETER num_ctx 2048

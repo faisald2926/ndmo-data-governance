@@ -1,0 +1,762 @@
+﻿file,row_id,column,dq_dimension,defect_type,description
+01_vendors_master.csv,V00163,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01178,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01106,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00727,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00696,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00154,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00350,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00136,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01419,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01263,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01181,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00218,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00787,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01200,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00636,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01044,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00168,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00436,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00367,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00784,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00211,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00257,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01160,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01008,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V00185,vat_number,Validity,bad_format,VAT not 15 digits
+01_vendors_master.csv,V01004,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01313,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00026,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00880,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01232,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01362,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00177,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00496,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01094,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01116,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00209,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00973,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00710,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01008,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00457,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01381,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01238,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00116,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00014,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V00585,iban,Validity,bad_checksum_or_length,IBAN fails mod-97 / length
+01_vendors_master.csv,V01376,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01481,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01443,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01415,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01332,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00931,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00865,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01318,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00948,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01490,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00976,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01110,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00368,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01424,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00004,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00463,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00801,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00438,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01222,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01308,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01461,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00743,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01217,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00682,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01073,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00417,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01111,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01497,contact_phone,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V00215,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01327,contact_email,Completeness,missing_value,Required contact field empty
+01_vendors_master.csv,V01419,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00226,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01276,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00417,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00813,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00073,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00167,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01255,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00559,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01094,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01236,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00358,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01003,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01455,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00945,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00615,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01109,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00023,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00451,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01292,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01157,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00552,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00340,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00633,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V00475,last_updated,Timeliness,stale_record,Not updated in >3 years
+01_vendors_master.csv,V01154-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V01154
+01_vendors_master.csv,V00242-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00242
+01_vendors_master.csv,V00413-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00413
+01_vendors_master.csv,V01104-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V01104
+01_vendors_master.csv,V00455-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00455
+01_vendors_master.csv,V00394-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00394
+01_vendors_master.csv,V00259-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00259
+01_vendors_master.csv,V00770-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00770
+01_vendors_master.csv,V00643-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00643
+01_vendors_master.csv,V00022-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00022
+01_vendors_master.csv,V01388-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V01388
+01_vendors_master.csv,V00098-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00098
+01_vendors_master.csv,V00111-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00111
+01_vendors_master.csv,V00383-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00383
+01_vendors_master.csv,V00005-DUP,cr_number,Uniqueness,duplicate_entity,Same CR as V00005
+01_vendors_master.csv,V01478,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V01153,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00397,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V01433,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00990,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00136,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00216,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00800,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V01474,status,Consistency,inconsistent_encoding,Status value not standardized
+01_vendors_master.csv,V00852,status,Consistency,inconsistent_encoding,Status value not standardized
+02_invoices.csv,INV-2026-003760,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-000431,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-000803,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001752,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-002065,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001201,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-005289,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001348,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-005795,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-009356,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-006117,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-003672,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-005714,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001679,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-004865,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-008174,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-009437,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-007941,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-006114,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-008160,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-000487,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-009109,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-005960,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001495,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-002398,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-009357,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-008047,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-002803,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-004041,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-002395,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001319,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001928,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-000742,invoice_no,Uniqueness,duplicate_invoice,Same invoice_no twice
+02_invoices.csv,INV-2026-001752,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-008901,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004515,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000653,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005395,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-008205,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-006683,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000135,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000364,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-006675,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005333,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-001164,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-003247,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002963,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002133,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004629,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-001363,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-009079,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005710,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-009647,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-009927,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-008022,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005720,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002258,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-006502,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000812,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-008973,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-001538,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002341,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005608,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004969,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004008,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004281,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000363,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-007123,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-008442,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004085,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-006827,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002612,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-003577,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-005875,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-006902,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004804,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-000525,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-007983,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002046,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-003924,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-002345,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-007303,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-007822,vat_amount,Accuracy,wrong_calculation,VAT != 15% of subtotal
+02_invoices.csv,INV-2026-004253,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008043,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-005618,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006449,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-005836,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006810,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009705,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006771,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009310,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-000643,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-007193,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-003464,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-004193,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-001615,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009573,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006267,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006253,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008704,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-005961,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-001215,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-007682,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009685,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-001740,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008417,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-000503,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009934,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-002288,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-004455,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-009071,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-007747,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006407,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-000804,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-001324,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-005366,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-002116,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008432,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008916,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-003060,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-006136,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-000548,total_amount,Accuracy,wrong_calculation,total != subtotal + vat
+02_invoices.csv,INV-2026-008267,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-007554,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-008798,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-000463,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-005586,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-009565,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-008897,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-008515,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-007260,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-003133,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-009494,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-007683,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-002578,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-005137,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-006109,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-003237,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-007710,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-006226,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-001157,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-005034,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-003737,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-003378,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-008997,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-000508,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-000864,subtotal,Validity,out_of_range,Negative subtotal
+02_invoices.csv,INV-2026-004624,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-007962,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-001302,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-004784,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-006219,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-001788,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-005387,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-006681,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-003521,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-005246,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-007518,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-008719,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-001995,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-007313,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-009568,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-006130,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-006142,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-000098,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-008424,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-000221,issue_date,Validity,future_date,Issue date in the future
+02_invoices.csv,INV-2026-008769,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001408,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-008516,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-007149,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-006821,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-006195,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-005142,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-009672,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-000366,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001452,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-005713,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-007104,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-005874,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-002526,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-006999,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-006177,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-005681,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001896,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001855,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001977,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-004307,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-003626,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001311,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-000897,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-004601,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-007959,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-009561,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-001257,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-003091,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-006606,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-007349,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-008966,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-007563,currency,Consistency,mixed_currency,Currency not SAR
+02_invoices.csv,INV-2026-002758,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006159,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-008619,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-007813,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-002624,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-001630,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006377,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000346,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006369,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000445,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-002006,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-002395,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000190,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000929,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006968,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-005679,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-004005,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006796,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-004331,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000039,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-002629,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-001850,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-007707,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-003371,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006884,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-008885,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-005795,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-004977,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006472,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-001665,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-001813,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-009321,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-007000,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-005754,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-006162,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-003656,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-001780,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-009268,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-000801,cost_center,Completeness,missing_value,Cost center empty
+02_invoices.csv,INV-2026-002097,cost_center,Completeness,missing_value,Cost center empty
+03_employees_payroll.csv,E00022,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01026,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01243,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00668,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01084,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01801,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00516,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01846,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00429,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01514,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00220,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01642,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00541,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00030,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00264,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01110,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00185,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E01092,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00360,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00159,national_id,Validity,bad_checksum_or_length,National ID fails Luhn/length
+03_employees_payroll.csv,E00362,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01763,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00830,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01149,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01455,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01808,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01142,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01639,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00599,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01737,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01938,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00205,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00537,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00314,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01031,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00180,bank_iban,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00008,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00798,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00988,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E01659,mobile,Completeness,missing_value,Required field empty
+03_employees_payroll.csv,E00772,national_id,Uniqueness,duplicate_id,Same national_id as E01561
+03_employees_payroll.csv,E00283,national_id,Uniqueness,duplicate_id,Same national_id as E01975
+03_employees_payroll.csv,E01397,national_id,Uniqueness,duplicate_id,Same national_id as E01071
+03_employees_payroll.csv,E01197,national_id,Uniqueness,duplicate_id,Same national_id as E01303
+03_employees_payroll.csv,E00896,national_id,Uniqueness,duplicate_id,Same national_id as E00855
+03_employees_payroll.csv,E00751,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E01240,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E00662,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E01061,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E01200,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E00173,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E00355,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E01364,monthly_salary_sar,Accuracy,out_of_range,"Salary implausible (0, negative, or extreme)"
+03_employees_payroll.csv,E00550,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E00258,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01419,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01583,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01855,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01520,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E00213,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01585,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E01057,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+03_employees_payroll.csv,E00122,hire_date,Timeliness,stale_record,Hire date very old with no record refresh
+04_citizen_service_requests.csv,REQ-001372,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-001503,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000544,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000471,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000727,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-001725,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000959,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-002126,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-002884,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000008,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-002023,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000741,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-000489,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-002308,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-001851,request_id,Uniqueness,duplicate_request,Same request_id appears twice
+04_citizen_service_requests.csv,REQ-002161,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-002977,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-000201,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-000704,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-001675,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-001269,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-001068,request_text_ar,Completeness,missing_value,Empty request body
+04_citizen_service_requests.csv,REQ-001287,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-000799,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-001896,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-001987,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-000339,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-000455,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-000357,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-002976,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-001638,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+04_citizen_service_requests.csv,REQ-002403,status,Consistency,inconsistent_encoding,Status not standardized to Arabic values
+05_documents_register.csv,DOC-00001,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00002,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00003,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00004,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00005,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00006,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00007,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00008,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00009,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00010,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00011,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00012,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00013,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00014,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00015,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00016,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00017,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00018,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00019,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00020,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00021,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00022,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00023,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00024,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00025,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00026,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00027,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00028,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00029,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00030,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00031,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00032,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00033,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00034,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00035,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00036,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00037,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00038,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00039,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00040,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00041,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00042,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00043,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00044,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00045,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00046,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00047,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00048,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00049,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00050,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00051,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00052,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00053,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00054,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00055,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00056,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00057,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00058,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00059,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00060,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00061,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00062,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00063,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00064,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00065,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00066,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00067,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00068,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00069,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00070,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00071,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00072,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00073,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00074,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00075,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00076,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00077,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00078,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00079,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00080,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00081,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00082,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00083,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00084,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00085,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00086,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00087,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00088,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00089,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00090,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00091,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00092,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00093,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00094,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00095,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00096,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00097,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00098,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00099,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00100,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00101,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00102,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00103,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00104,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00105,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00106,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00107,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00108,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00109,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00110,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00111,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00112,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00113,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00114,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00115,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00116,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00117,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00118,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00119,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00120,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00121,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00122,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00123,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00124,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00125,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00126,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00127,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00128,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00129,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00130,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00131,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00132,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00133,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00134,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00135,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00136,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00137,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00138,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00139,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00140,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00141,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00142,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00143,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00144,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00145,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00146,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00147,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00148,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00149,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00150,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00151,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00152,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00153,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00154,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00155,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00156,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00157,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00158,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00159,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00160,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00161,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00162,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00163,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00164,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00165,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00166,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00167,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00168,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00169,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00170,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00171,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00172,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00173,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00174,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00175,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00176,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00177,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00178,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00179,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00180,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00181,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00182,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00183,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00184,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00185,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00186,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00187,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00188,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00189,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00190,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00191,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00192,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00193,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00194,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00195,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00196,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00197,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00198,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00199,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00200,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00201,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00202,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00203,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00204,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00205,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00206,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00207,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00208,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00209,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00210,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00211,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00212,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00213,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00214,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00215,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00216,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00217,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00218,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00219,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00220,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00221,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00222,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00223,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00224,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00225,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00226,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00227,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00228,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00229,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00230,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00231,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00232,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00233,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00234,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00235,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00236,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00237,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00238,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00239,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00240,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00241,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00242,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00243,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00244,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00245,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00246,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00247,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00248,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00249,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00250,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00251,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00252,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00253,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00254,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00255,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00256,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00257,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00258,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00259,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00260,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00261,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00262,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00263,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00264,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00265,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00266,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00267,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00268,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00269,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00270,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00271,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00272,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00273,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00274,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00275,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00276,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00277,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00278,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00279,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00280,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00281,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00282,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00283,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00284,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00285,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00286,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00287,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00288,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00289,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00290,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00291,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00292,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00293,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00294,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00295,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00296,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00297,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00298,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00299,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد
+05_documents_register.csv,DOC-00300,current_label,Completeness,unclassified,No classification label -> NDMO default = مقيّد

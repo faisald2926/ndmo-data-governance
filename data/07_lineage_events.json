@@ -1,0 +1,117 @@
+{
+  "producer": "ndmo-demo-pipeline",
+  "schemaURL": "https://openlineage.io/spec/1-0-5/OpenLineage.json",
+  "events": [
+    {
+      "eventType": "START",
+      "job": {
+        "namespace": "ndmo",
+        "name": "ingest_invoices"
+      },
+      "inputs": [
+        {
+          "namespace": "files",
+          "name": "02_invoices.csv"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "db",
+          "name": "stg_invoices"
+        }
+      ]
+    },
+    {
+      "eventType": "START",
+      "job": {
+        "namespace": "ndmo",
+        "name": "ingest_vendors"
+      },
+      "inputs": [
+        {
+          "namespace": "files",
+          "name": "01_vendors_master.csv"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "db",
+          "name": "stg_vendors"
+        }
+      ]
+    },
+    {
+      "eventType": "START",
+      "job": {
+        "namespace": "ndmo",
+        "name": "join_vendor_invoice"
+      },
+      "inputs": [
+        {
+          "namespace": "db",
+          "name": "stg_invoices"
+        },
+        {
+          "namespace": "db",
+          "name": "stg_vendors",
+          "facets": {
+            "source": "01_vendors_master.csv"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "db",
+          "name": "fact_spend"
+        }
+      ]
+    },
+    {
+      "eventType": "START",
+      "job": {
+        "namespace": "ndmo",
+        "name": "classify_requests"
+      },
+      "inputs": [
+        {
+          "namespace": "files",
+          "name": "04_citizen_service_requests.csv"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "db",
+          "name": "classified_requests",
+          "facets": {
+            "classification": "مقيّد / عام",
+            "method": "LLM + regex"
+          }
+        }
+      ]
+    },
+    {
+      "eventType": "START",
+      "job": {
+        "namespace": "ndmo",
+        "name": "build_spend_report"
+      },
+      "inputs": [
+        {
+          "namespace": "db",
+          "name": "fact_spend"
+        }
+      ],
+      "outputs": [
+        {
+          "namespace": "report",
+          "name": "quarterly_spend_dashboard",
+          "facets": {
+            "classification": "مقيّد",
+            "reason": "aggregates Restricted invoice+vendor PII -> highest level applies"
+          }
+        }
+      ]
+    }
+  ],
+  "note": "Demonstrates NDMO aggregation rule: report inherits Restricted from Restricted sources."
+}

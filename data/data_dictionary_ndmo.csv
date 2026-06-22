@@ -1,0 +1,26 @@
+﻿source_file,field,data_type,contains_pii,ndmo_level,impact_category,detection_method,notes
+01_vendors_master.csv,vendor_id,id,no,عام,لا يوجد,rule,Surrogate key
+01_vendors_master.csv,vendor_name_ar,text,no,مقيّد,أنشطة الجهات,rule,Commercial party
+01_vendors_master.csv,cr_number,id,no,عام,لا يوجد,rule,CR is public via MoC
+01_vendors_master.csv,vat_number,id,no,مقيّد,أنشطة الجهات,regex(15-digit),Tax identifier
+01_vendors_master.csv,contact_person_ar,name,yes,مقيّد,الأفراد - الخصوصية,NER/regex,Person name
+01_vendors_master.csv,contact_email,email,yes,مقيّد,الأفراد - الخصوصية,regex(email),PII
+01_vendors_master.csv,contact_phone,phone,yes,مقيّد,الأفراد - الخصوصية,regex(+9665),PII
+01_vendors_master.csv,iban,iban,yes,مقيّد,الأفراد - الخصوصية,regex(SA IBAN)+mod97,Financial PII
+01_vendors_master.csv,last_updated,date,no,عام,لا يوجد,rule,Metadata
+02_invoices.csv,invoice_no,id,no,مقيّد,أنشطة الجهات,rule,Transaction id
+02_invoices.csv,subtotal,money,no,مقيّد,أنشطة الجهات,rule,Detailed transaction => Restricted
+02_invoices.csv,vat_amount,money,no,مقيّد,أنشطة الجهات,rule,Derived
+02_invoices.csv,total_amount,money,no,مقيّد,أنشطة الجهات,rule,Detailed transaction
+02_invoices.csv,approved_by_id,national_id,yes,مقيّد,الأفراد - الخصوصية,regex(10-digit)+Luhn,Approver PII
+02_invoices.csv,payment_iban,iban,yes,مقيّد,الأفراد - الخصوصية,regex(SA IBAN)+mod97,Financial PII
+03_employees_payroll.csv,national_id,national_id,yes,مقيّد,الأفراد - الخصوصية,regex(10-digit)+Luhn,Strong PII
+03_employees_payroll.csv,full_name_ar,name,yes,مقيّد,الأفراد - الخصوصية,NER,PII
+03_employees_payroll.csv,monthly_salary_sar,money,yes,مقيّد,الأفراد - الخصوصية,rule,Salary => Restricted
+03_employees_payroll.csv,bank_iban,iban,yes,مقيّد,الأفراد - الخصوصية,regex+mod97,Financial PII
+03_employees_payroll.csv,biometric_on_file,flag,yes,مقيّد,الأفراد - الخصوصية,rule,Biometric indicator
+04_citizen_service_requests.csv,request_text_ar,free_text,maybe,(record-level),(record-level),LLM+regex,Depends on content
+05_documents_register.csv,title_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+05_documents_register.csv,snippet_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+06_open_datasets.csv,entity_name_ar,text,no,عام,لا يوجد,rule,Published open data
+06_open_datasets.csv,cr_number,id,no,عام,لا يوجد,rule,Public registry

@@ -1,0 +1,73 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: ndmo_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ndmo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ndmo_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-ndmo}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro      # auto-loads db/postgres_seed.sql on first init
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ndmo} -d ${POSTGRES_DB:-ndmo}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # Opt-in containerised Ollama (Linux / GPU-in-Docker). On Windows, run Ollama
+  # natively and leave this off; the app defaults to host.docker.internal.
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ndmo_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    profiles: ["with-ollama"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  app:
+    build: ./app
+    container_name: ndmo_app
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-ndmo}:${POSTGRES_PASSWORD:-ndmo_pass}@postgres:5432/${POSTGRES_DB:-ndmo}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      LLM_MODEL: ${LLM_MODEL:-iKhalid/ALLaM:7b}
+      LLM_MODE: ${LLM_MODE:-auto}
+      OLLAMA_KEEP_ALIVE: ${OLLAMA_KEEP_ALIVE:-10m}
+      LLM_NUM_CTX: ${LLM_NUM_CTX:-2048}
+      LLM_CONCURRENCY: ${LLM_CONCURRENCY:-4}
+      DATA_DIR: /data
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  dashboard:
+    build: ./dashboard
+    container_name: ndmo_dashboard
+    environment:
+      API_URL: http://app:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - app
+
+volumes:
+  pgdata:
+  ollama_models:
