@@ -1,3 +1,8 @@
+import requests
+import json
+
+
+
 """The NDMO classification system prompt + message builder for the local LLM.
 
 Canonical source of the prompt. A human-readable copy lives in
@@ -41,30 +46,33 @@ SYSTEM_PROMPT = """أنت خبير تصنيف بيانات معتمد لدى ج�
 
 # Few-shot examples steer the model toward the exact JSON + reasoning style.
 FEWSHOT = [
-    ("طلب مواطن: أعاني من حالة صحية مزمنة وأطلب إعفاءً من الرسوم، هويتي 1043215789.",
-     '{"ndmo_level":"مقيّد","impact_category":"الأفراد","impact_level":"منخفض",'
-     '"confidence":0.95,"evidence_span":"حالة صحية ... هويتي 1043215789",'
-     '"rationale_ar":"يحتوي بيانات صحية وهوية وطنية تخص فردًا => مقيّد"}'),
-    ("وثيقة: مذكرة تفاهم دبلوماسية بين المملكة ودولة أخرى، مسودة قبل الإعلان الرسمي.",
-     '{"ndmo_level":"سري","impact_category":"المصلحة الوطنية","impact_level":"متوسط",'
-     '"confidence":0.9,"evidence_span":"مذكرة تفاهم دبلوماسية ... قبل الإعلان",'
-     '"rationale_ar":"الاتفاقيات والمذكرات الدبلوماسية قبل الإعلان => سري"}'),
-    ("إعلان: وظائف شاغرة في الجهة، التقديم عبر الموقع الرسمي.",
-     '{"ndmo_level":"عام","impact_category":"أنشطة الجهات","impact_level":"لا يوجد",'
-     '"confidence":0.97,"evidence_span":"وظائف شاغرة ... الموقع الرسمي",'
-     '"rationale_ar":"إعلانات الوظائف معلومات عامة => عام"}'),
-    ("وثيقة: خطة العمليات الأمنية وإحداثيات تأمين منشأة حيوية وطنية.",
-     '{"ndmo_level":"سري للغاية","impact_category":"المصلحة الوطنية","impact_level":"عالي",'
-     '"confidence":0.93,"evidence_span":"خطة العمليات الأمنية ... منشأة حيوية",'
-     '"rationale_ar":"خطط وعمليات أمنية وبنية تحتية حيوية => سري للغاية"}'),
-    ("كشف رواتب: الموظف سعد العتيبي، الراتب الشهري 22000 ريال.",
-     '{"ndmo_level":"مقيّد","impact_category":"الأفراد","impact_level":"منخفض",'
-     '"confidence":0.94,"evidence_span":"الراتب الشهري 22000",'
-     '"rationale_ar":"معلومات رواتب الموظفين بيانات شخصية => مقيّد"}'),
-    ("بيان: الإحصاءات السكانية المنشورة حسب المنطقة للعام الحالي.",
-     '{"ndmo_level":"عام","impact_category":"أنشطة الجهات","impact_level":"لا يوجد",'
-     '"confidence":0.96,"evidence_span":"الإحصاءات السكانية المنشورة",'
-     '"rationale_ar":"إحصاءات وطنية منشورة => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.91, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.95, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.97, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.99, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.98, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "عام", "impact_category": "لا يوجد", "impact_level": "لا يوجد", "confidence": 0.96, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "استفسار عام لا يحتوي بيانات شخصية => عام"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.95, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.95, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.9, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.91, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.96, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.9, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('طلب مواطن: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 3015, dtype: str', '{"ndmo_level": "مقيّد", "impact_category": "الأفراد - الخصوصية/الصحة", "impact_level": "منخفض", "confidence": 0.96, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "النص يحتوي بيانات شخصية/صحية/مالية تخص فردًا => مقيّد"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "أنشطة الجهات - الأرباح/التنافسية", "impact_level": "متوسط", "confidence": 0.93, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خسارة مالية تنظيمية محتملة => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "المصلحة الوطنية - العلاقات الدولية", "impact_level": "متوسط", "confidence": 0.96, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "اتفاقيات/مذكرات تفاهم دبلوماسية => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "المصلحة الوطنية - العلاقات الدولية", "impact_level": "متوسط", "confidence": 0.94, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "اتفاقيات/مذكرات تفاهم دبلوماسية => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "أنشطة الجهات - التنافسية", "impact_level": "متوسط", "confidence": 0.93, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط مؤسسية قبل الإعلان => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "المصلحة الوطنية - الأمن السيبراني", "impact_level": "متوسط", "confidence": 0.98, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "ثغرات وخطط معالجة الأمن السيبراني => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "أنشطة الجهات - التنافسية", "impact_level": "متوسط", "confidence": 0.92, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط مؤسسية قبل الإعلان => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري", "impact_category": "المصلحة الوطنية - الاقتصاد", "impact_level": "متوسط", "confidence": 0.94, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "مواقع تخزين لوجستي/اقتصادي استراتيجي => سري"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - الأمن السيبراني", "impact_level": "عالي", "confidence": 0.96, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط الطوارئ السيبرانية الوطنية => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - الأمن القومي", "impact_level": "عالي", "confidence": 0.9, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "بيانات مراقبة أمنية => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - البنية التحتية/الأمن", "impact_level": "عالي", "confidence": 0.97, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط وتفاصيل عمليات أمنية + بنية تحتية حيوية => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - البنية التحتية/الأمن", "impact_level": "عالي", "confidence": 0.97, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط وتفاصيل عمليات أمنية + بنية تحتية حيوية => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - السيادة", "impact_level": "عالي", "confidence": 0.91, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "تحركات القوات/الشخصيات الهامة => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - الأمن السيبراني", "impact_level": "عالي", "confidence": 0.91, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "خطط الطوارئ السيبرانية الوطنية => سري للغاية"}'),
+    ('وثيقة: <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str - <StringArray>\n[nan, nan, nan, nan, nan, nan, nan, nan, nan, nan,\n ...\n nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]\nLength: 300, dtype: str', '{"ndmo_level": "سري للغاية", "impact_category": "المصلحة الوطنية - الأمن السيبراني", "impact_level": "عالي", "confidence": 0.91, "evidence_span": "<StringArray>\n[nan, nan, nan, ...", "rationale_ar": "مفاتيح التشفير للبنى التحتية الوطنية => سري للغاية"}')
 ]
 
 USER_TEMPLATE = "صنّف المحتوى التالي وأعد JSON فقط:\n---\n{content}\n---"
@@ -78,3 +86,37 @@ def build_messages(content: str):
         messages.append({"role": "assistant", "content": assistant})
     messages.append({"role": "user", "content": USER_TEMPLATE.format(content=content)})
     return messages
+
+
+#to test in ollama:p
+
+def classify_text(content: str):
+    """دالة تقوم بإرسال الرسائل المجهزة إلى نموذج علّام عبر Ollama"""
+    
+    
+    messages = build_messages(content)
+    
+    # 
+    url = "http://localhost:11434/api/chat"
+    payload = {
+        "model": "allam-7b",
+        "messages": messages,
+        "stream": False,
+        "format": "json", 
+        "options": {
+            "temperature": 0.0 
+        }
+    }
+    
+    try:
+        response = requests.post(url, json=payload)
+        response.raise_for_status()
+        result = response.json()
+        return result["message"]["content"]
+    except Exception as e:
+        return json.dumps({"error": str(e)})
+
+#here to test system local:-
+if __name__ == "__main__":
+    test_text = "أرجو تحديث بياناتي الطبية، رقم هويتي 1044673646"
+    print(classify_text(test_text))
