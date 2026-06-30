@@ -5,6 +5,7 @@
   --info:#185fa5; --danger:#a32d2d; --radius:12px; --radius-sm:8px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{font-family:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif}
 body{margin:0;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6}
 h1,h2,h3{font-weight:600;margin:0}
