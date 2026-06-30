@@ -8,12 +8,22 @@ class ClassifyRequest(BaseModel):
     text: str | None = None
     content: dict[str, Any] | None = None
 
-    model_config = {"json_schema_extra": {"examples": [
-        {"text": "أعاني من حالة صحية وأطلب إعفاءً، هويتي 1043215789"},
-        {"content": {"invoice_no": "INV-1", "payment_iban": "SA0380000000608010167519",
-                     "subtotal": "1000"}},
-    ]}}
-
 
 class PipelineRequest(BaseModel):
     max_per_file: int | None = None
+
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+
+class UserCreate(BaseModel):
+    username: str
+    password: str
+    role: str = "viewer"
+
+
+class RecordUpdate(BaseModel):
+    ndmo_level: str | None = None
+    needs_review: bool | None = None

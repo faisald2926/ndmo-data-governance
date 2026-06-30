@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حوكمة البيانات — NDMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="login" class="login-wrap">
+    <form id="login-form" class="login-card" autocomplete="on">
+      <div class="brand"><span class="brand-mark">NDMO</span></div>
+      <h1 data-i18n="appTitle"></h1>
+      <p class="muted" data-i18n="loginSubtitle"></p>
+      <label data-i18n="username"></label>
+      <input id="username" name="username" required />
+      <label data-i18n="password"></label>
+      <input id="password" name="password" type="password" required />
+      <button type="submit" id="login-btn" data-i18n="login"></button>
+      <p id="login-error" class="error" hidden></p>
+      <p class="hint muted" data-i18n="demoHint"></p>
+      <button type="button" class="link langswap" id="login-lang"></button>
+    </form>
+  </div>
+
+  <!-- APP -->
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="topbar-start">
+        <span class="brand-mark sm">NDMO</span>
+        <span class="app-title" data-i18n="appTitle"></span>
+      </div>
+      <div class="topbar-end">
+        <button class="ghost" id="lang-toggle"></button>
+        <span class="user-chip"><span id="user-name"></span> · <span id="user-role" class="role-badge"></span></span>
+        <button class="ghost" id="logout" data-i18n="logout"></button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="sidenav" id="sidenav"></nav>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

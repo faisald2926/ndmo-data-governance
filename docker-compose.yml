@@ -35,6 +35,7 @@ services:
               count: all
               capabilities: [gpu]
 
+  # FastAPI backend + the bilingual web UI (served at http://localhost:8000)
   app:
     build: ./app
     container_name: ndmo_app
@@ -47,6 +48,9 @@ services:
       OLLAMA_KEEP_ALIVE: ${OLLAMA_KEEP_ALIVE:-10m}
       LLM_NUM_CTX: ${LLM_NUM_CTX:-2048}
       LLM_CONCURRENCY: ${LLM_CONCURRENCY:-4}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
       DATA_DIR: /data
     ports:
       - "8000:8000"
@@ -57,16 +61,6 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-
-  dashboard:
-    build: ./dashboard
-    container_name: ndmo_dashboard
-    environment:
-      API_URL: http://app:8000
-    ports:
-      - "8501:8501"
-    depends_on:
-      - app
 
 volumes:
   pgdata:
