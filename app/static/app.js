@@ -3,7 +3,7 @@
 /* ---------------- i18n ---------------- */
 const T = {
   ar: {
-    appTitle:"حوكمة البيانات — NDMO", loginSubtitle:"سجّل الدخول للمتابعة",
+    appTitle:"حوكمة البيانات", loginSubtitle:"سجّل الدخول للمتابعة",
     username:"اسم المستخدم", password:"كلمة المرور", login:"دخول", logout:"خروج",
     demoHint:"تجريبي: admin / admin123 — أو viewer / viewer123",
     overview:"نظرة عامة", records:"السجلات", quality:"الجودة", evaluation:"التقييم",
@@ -28,7 +28,7 @@ const T = {
     loading:"جارٍ التحميل…", adminOnly:"للمدير فقط",
   },
   en: {
-    appTitle:"Data Governance — NDMO", loginSubtitle:"Sign in to continue",
+    appTitle:"Data Governance", loginSubtitle:"Sign in to continue",
     username:"Username", password:"Password", login:"Sign in", logout:"Sign out",
     demoHint:"Demo: admin / admin123 — or viewer / viewer123",
     overview:"Overview", records:"Records", quality:"Quality", evaluation:"Evaluation",
