@@ -79,7 +79,7 @@ button.primary:hover{background:var(--green-d)}
 /* ---------- tables ---------- */
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:start;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;font-size:12.5px;background:var(--bg);position:sticky;top:55px}
+th{color:var(--muted);font-weight:600;font-size:12.5px;background:var(--bg);position:sticky;top:0}
 .table-wrap{overflow:auto;max-height:62vh;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 tr:hover td{background:#fbfcfc}
 
