@@ -155,7 +155,7 @@ async function renderOverview(){
      <span class="cnt">${c.toLocaleString()}</span></div>`).join("") : `<p class="muted">—</p>`;
   $("#content").innerHTML = `
     <h2 class="section-title">${esc(t("overview"))}</h2>
-    <p class="section-sub">NDMO</p>
+    <p class="section-sub">Mizan</p>
     ${adminBtns}
     <div class="metrics">
       <div class="metric"><div class="label">${esc(t("m_total"))}</div><div class="value">${(s.total_records||0).toLocaleString()}</div></div>
