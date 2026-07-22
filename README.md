@@ -1,111 +1,158 @@
-# NDMO Data Governance · حوكمة البيانات
+<p align="center">
+  <img src="docs/assets/project-hero.svg" alt="Mizan - Elm Data Governance Challenge" width="100%" />
+</p>
 
-Automated data **classification**, **quality monitoring**, and **lineage** aligned with Saudi **NDMO** standards — with a bilingual **Arabic-first** web UI and **role-based access control**. The classifier runs locally on **ALLaM-7B** via Ollama, so no data leaves the host.
+<p align="center">
+  <strong>مشروع فريق تحدي حوكمة البيانات في قطاع التقنية والمشاريع لدى عِلم (Elm)</strong><br />
+  منصة عربية أولًا لتحويل متطلبات NDMO إلى قرارات تصنيف وجودة وأثر قابلة للتفسير والتدقيق.
+</p>
 
-🌐 [English](#english) · [العربية](#بالعربية)
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.11-183f5b?style=flat-square&logo=python&logoColor=white" />
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-API-0f795e?style=flat-square&logo=fastapi&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-16-285f87?style=flat-square&logo=postgresql&logoColor=white" />
+  <img alt="Ollama" src="https://img.shields.io/badge/ALLaM--7B-local-10211c?style=flat-square" />
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-Compose-2477bd?style=flat-square&logo=docker&logoColor=white" />
+  <img alt="Arabic first" src="https://img.shields.io/badge/UI-Arabic--first-ba7517?style=flat-square" />
+</p>
 
----
-
-<a name="english"></a>
-## English
-
-### Overview
-A containerised data-governance platform: **FastAPI + PostgreSQL + Ollama (ALLaM-7B) + a custom bilingual web UI**. It classifies data into the four NDMO sensitivity levels, monitors the six NDMO quality dimensions, traces lineage from source to report, and enforces role-based access — the four pain points the challenge names: random classification, manual compliance, lost lineage, and poor quality.
-
-### Features
-- **Classification** — 3-layer hybrid: deterministic rules/regex (Saudi national ID via Luhn, IBAN via mod-97, phone, VAT) → **ALLaM-7B** (local) for free text → a policy engine (default-to-Restricted, highest-level-on-aggregation). Evidence + rationale on every decision.
-- **Data quality** — the 6 NDMO dimensions (Completeness, Uniqueness, Timeliness, Validity, Accuracy, Consistency) with thresholds and per-row findings.
-- **Lineage** — OpenLineage-style `source → transform → report`; a report inherits the highest level of its inputs.
-- **RBAC** — Admin and Viewer roles, token-based auth, append-only audit log.
-- **Bilingual UI** — Arabic-first (RTL) with a one-click switch to English, served at `:8000`.
-
-### Quickstart (Docker)
-```bash
-cp .env.example .env            # Windows PowerShell: Copy-Item .env.example .env
-docker compose up -d --build    # postgres + app (UI + API at :8000); Postgres auto-loads seed data
-```
-Open http://localhost:8000, then run the pipeline and score it:
-```bash
-docker compose exec app python pipeline.py --max-per-file 300
-docker compose exec app python evaluate.py
-```
-> Ollama runs natively on the host by default (`OLLAMA_BASE_URL=http://host.docker.internal:11434`). To run Ollama in a container instead: `docker compose --profile with-ollama up -d --build`.
-
-### Access & roles (RBAC)
-| Role | Demo login | Can do |
-|------|-----------|--------|
-| **Admin** | `admin / admin123` | manage users, edit a record's severity, run the pipeline, seed data, full read access |
-| **Viewer** | `viewer / viewer123` | read-only: records and their urgency, quality findings, lineage, evaluation |
-
-Change `JWT_SECRET` and `ADMIN_PASSWORD` in `.env` before any real use.
-
-### The model
-ALLaM-7B (Saudi sovereign model) via Ollama, tag `iKhalid/ALLaM:7b` (~4.5 GB Q4 — fits an 8 GB GPU). No GPU? set `LLM_MODE=offline` (rules + keyword fallback). Smaller GPU? `LLM_MODEL=qwen2.5:3b-instruct`.
-
-### Evaluation
-The dataset ships answer keys, so scoring is automatic. `GET /evaluate` (or the dashboard's Evaluation tab) returns classification accuracy + confusion matrix and quality precision/recall. Offline baseline: **accuracy 0.817**, **quality precision 0.974 / recall 0.971**. The production ALLaM-7B number comes from `evaluate` after a real run.
-
-### Project structure
-```
-app/    FastAPI — classification/  quality/  lineage/  ingestion/  auth.py  main.py  static/ (web UI)
-data/   synthetic datasets + answer keys        db/postgres_seed.sql
-prompts/ndmo_system_prompt.md   docker-compose.yml   Makefile   .env.example
-```
-
-### Notes
-All data is **synthetic**. The local model means no data leaves the host (PDPL-friendly). No fine-tuning yet — an AraBERT / QLoRA track is a documented next step.
+<p align="center"><a href="#العربية">العربية</a> · <a href="#english">English</a></p>
 
 ---
 
-<a name="بالعربية"></a>
-<div dir="rtl">
+<a id="العربية"></a>
 
-## بالعربية
+## ميزان في سطر واحد
 
-### نظرة عامة
-منصّة حوكمة بيانات حاوية (Docker): **FastAPI + PostgreSQL + Ollama (ALLaM-7B) + واجهة ويب مخصّصة ثنائية اللغة**. تُصنّف البيانات إلى مستويات NDMO الأربعة، وتراقب أبعاد الجودة الستة، وتتبّع الأثر من المصدر إلى التقرير، وتطبّق صلاحيات الوصول حسب الدور — وهي معالجة مباشرة للتحديات الأربعة: عشوائية التصنيف، والامتثال اليدوي، وفقدان الأثر، وضعف الجودة.
+**ميزان** منصة حوكمة بيانات متكاملة بُنيت لمشروع تحدي حوكمة البيانات لدى **عِلم - قطاع التقنية والمشاريع**. تستوعب البيانات، تصنّف حساسيتها وفق مستويات NDMO الأربعة، تقيس أبعاد الجودة الستة، وتتتبّع الأثر من المصدر إلى التقرير - مع صلاحيات وصول وسجل تدقيق وتشغيل محلي للنموذج.
 
-### المزايا
-- **التصنيف** — هجين من ثلاث طبقات: قواعد وأنماط حتمية (الهوية الوطنية عبر Luhn، الآيبان عبر mod-97، الجوال، الرقم الضريبي) ← **ALLaM-7B** محلي للنص الحر ← طبقة سياسات (الافتراضي «مقيّد»، والمستوى الأعلى عند التجميع). مع دليل وتبرير لكل قرار.
-- **جودة البيانات** — أبعاد NDMO الستة (الاكتمال، التفرّد، الحداثة، الصحة، الدقة، الاتساق) مع عتبات وتنبيهات على مستوى الصف.
-- **تتبّع الأثر** — أحداث بنمط OpenLineage: المصدر ← المعالجة ← التقرير؛ ويرث التقرير أعلى مستوى من مصادره.
-- **الصلاحيات (RBAC)** — دورا «مدير» و«مشاهد»، مصادقة برمز، وسجل تدقيق غير قابل للتعديل.
-- **واجهة ثنائية اللغة** — عربية أولاً (من اليمين لليسار) مع تبديل فوري للإنجليزية، على المنفذ 8000.
+> كل البيانات المرفقة اصطناعية. لا يحتوي المشروع على بيانات شخصية حقيقية، ويعمل النموذج محليًا حتى لا تغادر البيانات بيئة التشغيل.
 
-### التشغيل السريع (Docker)
+## من التحدي إلى حل قابل للتشغيل
+
+| التحدي | ما يقدمه ميزان |
+|---|---|
+| عشوائية التصنيف | مصنّف هجين قائم على الأدلة: قواعد حتمية ← ALLaM-7B محلي ← محرك سياسات |
+| الامتثال اليدوي | توصية تحكم، وسم للمراجعة، وتبرير وسجل تدقيق لكل قرار |
+| فقدان الأثر | تتبّع بنمط OpenLineage من المصدر إلى المعالجة ثم التقرير |
+| ضعف جودة البيانات | محرك يقيس الاكتمال والتفرّد والحداثة والصحة والدقة والاتساق |
+
+## تجربة عربية مصممة لمركز القرار
+
+<p align="center">
+  <img src="docs/assets/dashboard-overview.png" alt="واجهة ميزان المطورة" width="100%" />
+</p>
+
+الواجهة عربية أولًا (RTL)، ثنائية اللغة، وتعرض المؤشرات والتوزيعات ونتائج التقييم وسلسلة الأثر ضمن تجربة موحّدة. يملك المدير صلاحيات التشغيل والتعديل وإدارة المستخدمين، بينما يحصل المشاهد على وصول للقراءة فقط.
+
+## المعمارية
+
+<p align="center">
+  <img src="docs/assets/architecture.svg" alt="معمارية نظام ميزان" width="100%" />
+</p>
+
+أربع ركائز تعمل كخط معالجة واحد: الاستيعاب إلى PostgreSQL، والتصنيف الهجين، ومحرك الجودة، وتتبع الأثر. تُعرض النتائج عبر FastAPI وواجهة ويب محمية بصلاحيات وصول حسب الدور.
+
+## نتائج مقاسة وقابلة لإعادة التحقق
+
+<p align="center">
+  <img src="docs/assets/measured-performance.svg" alt="الأداء المقاس في التقرير الفني" width="100%" />
+</p>
+
+| المقياس | النتيجة | نطاق القياس |
+|---|---:|---|
+| دقة التصنيف - خط الأساس دون النموذج | **81.7%** | 4,300 سجل معنّون |
+| دقة اكتشاف عيوب الجودة | **97.4%** | 761 حالة جودة موثقة |
+| استرجاع عيوب الجودة | **97.1%** | 761 حالة جودة موثقة |
+
+دقة التصنيف المذكورة هي **خط الأساس دون النموذج** (قواعد + احتياطي بالكلمات المفتاحية)، وليست نتيجة ALLaM-7B الإنتاجية. يمكن قياس نتيجة النموذج الفعلية بعد تشغيل خط المعالجة ثم التقييم.
+
+## ماذا تقول البيانات؟
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/assets/quality-defects.svg" alt="توزيع عيوب جودة البيانات" /></td>
+    <td width="50%"><img src="docs/assets/dataset-profile.svg" alt="تركيب مجموعة البيانات الاصطناعية" /></td>
+  </tr>
+</table>
+
+- يتصدر **الاكتمال** فرص التحسين بـ397 حالة من أصل 761.
+- تغطي البيئة **17,863 سجلًا اصطناعيًا** موزعة على ستة مصادر واقعية البنية.
+- تتضمن مفاتيح الإجابات 4,300 سجل معنّون لتقييم التصنيف آليًا.
+
+## كيف يعمل التصنيف؟
+
+1. **قواعد وأنماط حتمية:** الهوية الوطنية عبر Luhn، الآيبان عبر mod-97، الجوال، الرقم الضريبي، ومعجم أعمدة عربي/إنجليزي.
+2. **نموذج محلي:** ALLaM-7B يعالج النص الحر والحالات الغامضة دون إرسال البيانات إلى خدمة خارجية.
+3. **محرك سياسات:** يطبق المستوى الأعلى عند التجميع، ويستخدم «مقيّد» كافتراضي آمن، ويحدد الحالات التي تحتاج مراجعة.
+
+كل قرار يعيد المستوى، والثقة، والدليل، والتبرير، وطريقة اتخاذ القرار.
+
+## التشغيل السريع
+
 ```bash
 cp .env.example .env
 docker compose up -d --build
 ```
-افتح http://localhost:8000 ثم شغّل المعالجة والتقييم:
+
+افتح `http://localhost:8000` ثم استخدم أحد الحسابين التجريبيين:
+
+| الدور | بيانات الدخول | الصلاحيات |
+|---|---|---|
+| مدير | `admin / admin123` | تشغيل المعالجة، التعديل، إدارة المستخدمين، وصول كامل |
+| مشاهد | `viewer / viewer123` | قراءة السجلات والجودة والأثر والتقييم |
+
+شغّل خط المعالجة والتقييم:
+
 ```bash
 docker compose exec app python pipeline.py --max-per-file 300
 docker compose exec app python evaluate.py
 ```
-> يعمل Ollama محليًا على الجهاز افتراضيًا. ولتشغيله داخل حاوية: `docker compose --profile with-ollama up -d --build`.
 
-### الصلاحيات والأدوار
-| الدور | الدخول (تجريبي) | الصلاحيات |
-|------|----------------|-----------|
-| **مدير** | `admin / admin123` | إدارة المستخدمين، تعديل مستوى السجل، تشغيل المعالجة، تحميل البيانات، واطلاع كامل |
-| **مشاهد** | `viewer / viewer123` | اطلاع فقط: السجلات ومستوى حساسيتها، الجودة، الأثر، التقييم |
+> غيّر `JWT_SECRET` و`ADMIN_PASSWORD` في `.env` قبل أي استخدام غير تجريبي.
 
-غيّر `JWT_SECRET` و`ADMIN_PASSWORD` في `.env` قبل أي استخدام فعلي.
+## المكدس التقني
 
-### النموذج
-ALLaM-7B (نموذج سعودي سيادي) عبر Ollama بالوسم `iKhalid/ALLaM:7b` (~4.5 جيجابايت Q4 — يناسب بطاقة 8 جيجابايت). بدون بطاقة رسومية: `LLM_MODE=offline`. لبطاقة أصغر: `LLM_MODEL=qwen2.5:3b-instruct`.
+`FastAPI` · `PostgreSQL 16` · `SQLAlchemy` · `Ollama / ALLaM-7B` · `Docker Compose` · `Python` · واجهة `HTML/CSS/JS` عربية مخصصة
 
-### التقييم
-تتضمّن البيانات مفاتيح إجابات، لذا التقييم آلي. يعطي `/evaluate` (أو تبويب التقييم في الواجهة) دقة التصنيف ومصفوفة الالتباس، ودقة/استرجاع الجودة. الأساس دون النموذج: **الدقة 0.817**، **جودة البيانات: دقة 0.974 / استرجاع 0.971**. ويأتي رقم ALLaM-7B الفعلي بعد تشغيل حقيقي.
+---
 
-### هيكل المشروع
+<a id="english"></a>
+
+## English
+
+**Mizan** is an Arabic-first data-governance platform created for the **Elm Data Governance Challenge team within Technology & Projects**. It turns NDMO requirements into explainable classification, measurable data quality, traceable lineage, and role-controlled actions.
+
+### Core capabilities
+
+- **Explainable classification:** deterministic Saudi identifier checks → local ALLaM-7B → policy enforcement.
+- **NDMO data quality:** completeness, uniqueness, timeliness, validity, accuracy, and consistency.
+- **End-to-end lineage:** source → transform → report, with highest-sensitivity inheritance.
+- **Governed access:** Admin and Viewer roles, token authentication, and an append-only audit log.
+- **Local-first AI:** the model runs on the host; project datasets are synthetic.
+
+### Verified baseline
+
+The included answer keys make evaluation reproducible: **81.7% offline classification accuracy**, **97.4% data-quality precision**, and **97.1% data-quality recall**. The classification figure is the rules/keyword baseline, not a claimed ALLaM-7B production score.
+
+### Repository map
+
+```text
+app/        FastAPI API, classification, quality, lineage, ingestion, auth, bilingual UI
+data/       Synthetic datasets and evaluation answer keys
+db/         PostgreSQL bootstrap seed
+docs/       Project visuals recreated from the June 2026 technical report
+prompts/    NDMO system prompt
+ollama/     Local model definition
 ```
-app/    FastAPI — classification/  quality/  lineage/  ingestion/  auth.py  main.py  static/ (واجهة الويب)
-data/   البيانات الاصطناعية + مفاتيح الإجابات     db/postgres_seed.sql
-prompts/ndmo_system_prompt.md   docker-compose.yml   Makefile   .env.example
+
+### Quick start
+
+```bash
+cp .env.example .env
+docker compose up -d --build
+docker compose exec app python pipeline.py --max-per-file 300
+docker compose exec app python evaluate.py
 ```
 
-### ملاحظات
-جميع البيانات **اصطناعية**. تشغيل النموذج محليًا يعني عدم خروج البيانات من الجهاز (متوافق مع PDPL). لا يوجد ضبط دقيق بعد — مسار AraBERT / QLoRA خطوة مستقبلية موثّقة.
-
-</div>
+Open `http://localhost:8000`. Demo credentials are `admin / admin123` and `viewer / viewer123`; replace all demo secrets before real use.

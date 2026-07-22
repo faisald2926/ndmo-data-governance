@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Synthetic dataset composition and ground truth</title>
+  <desc id="desc">Dataset composition totals 17,863 rows; ground-truth classification covers 4,300 labelled records.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0c5f4c"/><stop offset="1" stop-color="#25ae83"/></linearGradient></defs>
+  <rect width="1200" height="650" rx="26" fill="#f7faf9"/>
+  <text x="60" y="70" font-family="Arial,sans-serif" font-size="32" font-weight="800" fill="#10221e">SYNTHETIC DATASET PROFILE</text>
+  <text x="60" y="106" font-family="Arial,sans-serif" font-size="18" fill="#60716b">Realistic Saudi-domain structure without real personal data</text>
+  <line x1="600" y1="145" x2="600" y2="590" stroke="#d7e3df" stroke-width="2"/>
+  <text x="60" y="155" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#0b493b">17,863 rows · six source tables</text>
+  <g font-family="Arial,sans-serif" font-size="17" fill="#263b35" text-anchor="end"><text x="185" y="217">Invoices</text><text x="185" y="284">Citizen requests</text><text x="185" y="351">Employees</text><text x="185" y="418">Vendors</text><text x="185" y="485">Open data</text><text x="185" y="552">Documents</text></g>
+  <g fill="#e4edea"><rect x="210" y="193" width="320" height="31" rx="9"/><rect x="210" y="260" width="320" height="31" rx="9"/><rect x="210" y="327" width="320" height="31" rx="9"/><rect x="210" y="394" width="320" height="31" rx="9"/><rect x="210" y="461" width="320" height="31" rx="9"/><rect x="210" y="528" width="320" height="31" rx="9"/></g>
+  <g fill="url(#g)"><rect x="210" y="193" width="320" height="31" rx="9"/><rect x="210" y="260" width="96" height="31" rx="9"/><rect x="210" y="327" width="64" height="31" rx="9"/><rect x="210" y="394" width="48" height="31" rx="9"/><rect x="210" y="461" width="32" height="31" rx="9"/><rect x="210" y="528" width="10" height="31" rx="9"/></g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#10221e"><text x="540" y="217">10,033</text><text x="316" y="284">3,015</text><text x="284" y="351">2,000</text><text x="268" y="418">1,515</text><text x="252" y="485">1,000</text><text x="230" y="552">300</text></g>
+
+  <text x="650" y="155" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#0b493b">4,300 labelled records</text>
+  <g transform="translate(650 195)" font-family="Arial,sans-serif">
+    <rect width="478" height="72" rx="15" fill="#e2f5ee"/><rect width="312" height="72" rx="15" fill="#25a47c"/>
+    <text x="24" y="33" font-size="17" font-weight="700" fill="#fff">Public</text><text x="24" y="57" font-size="15" fill="#dff8ef">2,804 · 65.2%</text>
+    <text x="331" y="33" font-size="17" font-weight="700" fill="#0c5f4c">Restricted</text><text x="331" y="57" font-size="15" fill="#4b6b61">1,376 · 32.0%</text>
+    <g transform="translate(0 105)"><rect width="478" height="72" rx="15" fill="#f6e8de"/><rect width="28" height="72" rx="15" fill="#d75b32"/><text x="47" y="33" font-size="17" font-weight="700" fill="#9f3f23">Secret</text><text x="47" y="57" font-size="15" fill="#785c52">70 · 1.6%</text></g>
+    <g transform="translate(0 210)"><rect width="478" height="72" rx="15" fill="#f7e3e1"/><rect width="22" height="72" rx="11" fill="#b83c34"/><text x="47" y="33" font-size="17" font-weight="700" fill="#8f302b">Top secret</text><text x="47" y="57" font-size="15" fill="#785c52">50 · 1.2%</text></g>
+    <g transform="translate(0 330)"><rect width="478" height="92" rx="18" fill="#0b493b"/><text x="24" y="36" font-size="14" fill="#b8f1dd">GROUND TRUTH DESIGN</text><text x="24" y="66" font-size="18" font-weight="700" fill="#fff">Valid identifiers + deliberately injected defects</text></g>
+  </g>
+  <text x="1140" y="622" text-anchor="end" font-family="Arial,sans-serif" font-size="15" fill="#71817c">Source: project technical report · June 2026</text>
+</svg>

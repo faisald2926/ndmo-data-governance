@@ -13,19 +13,48 @@
 <body>
   <!-- LOGIN -->
   <div id="login" class="login-wrap">
-    <form id="login-form" class="login-card" autocomplete="on">
-      <div class="brand"><span class="brand-mark">Mizan</span></div>
-      <h1 data-i18n="appTitle"></h1>
-      <p class="muted" data-i18n="loginSubtitle"></p>
-      <label data-i18n="username"></label>
-      <input id="username" name="username" required />
-      <label data-i18n="password"></label>
-      <input id="password" name="password" type="password" required />
-      <button type="submit" id="login-btn" data-i18n="login"></button>
-      <p id="login-error" class="error" hidden></p>
-      <p class="hint muted" data-i18n="demoHint"></p>
-      <button type="button" class="link langswap" id="login-lang"></button>
-    </form>
+    <div class="login-shell">
+      <section class="login-showcase">
+        <div class="showcase-topline">
+          <span class="elm-wordmark">elm <i></i> عِلم</span>
+          <span class="challenge-pill" data-i18n="challengeTeam"></span>
+        </div>
+        <div class="showcase-copy">
+          <span class="eyebrow light" data-i18n="showcaseEyebrow"></span>
+          <h2 data-i18n="showcaseTitle"></h2>
+          <p data-i18n="showcaseBody"></p>
+          <div class="capability-grid">
+            <div><b>4</b><span data-i18n="capLevels"></span></div>
+            <div><b>6</b><span data-i18n="capQuality"></span></div>
+            <div><b>100%</b><span data-i18n="capLocal"></span></div>
+          </div>
+        </div>
+        <div class="showcase-orbit" aria-hidden="true">
+          <div class="orbit-core"><span>M</span></div>
+          <i class="orbit o1"></i><i class="orbit o2"></i><i class="orbit o3"></i>
+          <span class="orbit-node n1"></span><span class="orbit-node n2"></span><span class="orbit-node n3"></span>
+        </div>
+        <p class="showcase-footer" data-i18n="techProjects"></p>
+      </section>
+
+      <form id="login-form" class="login-card" autocomplete="on">
+        <div class="login-card-top">
+          <span class="brand-mark">Mizan</span>
+          <span class="secure-chip" data-i18n="localFirst"></span>
+        </div>
+        <span class="eyebrow" data-i18n="welcome"></span>
+        <h1 data-i18n="appTitle"></h1>
+        <p class="muted" data-i18n="loginSubtitle"></p>
+        <label data-i18n="username"></label>
+        <input id="username" name="username" required />
+        <label data-i18n="password"></label>
+        <input id="password" name="password" type="password" required />
+        <button type="submit" id="login-btn" data-i18n="login"></button>
+        <p id="login-error" class="error" hidden></p>
+        <p class="hint muted" data-i18n="demoHint"></p>
+        <button type="button" class="link langswap" id="login-lang"></button>
+      </form>
+    </div>
   </div>
 
   <!-- APP -->
@@ -34,6 +63,7 @@
       <div class="topbar-start">
         <span class="brand-mark sm">Mizan</span>
         <span class="app-title" data-i18n="appTitle"></span>
+        <span class="topbar-team" data-i18n="challengeTeam"></span>
       </div>
       <div class="topbar-end">
         <button class="ghost" id="lang-toggle"></button>

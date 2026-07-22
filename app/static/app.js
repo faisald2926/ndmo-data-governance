@@ -3,7 +3,17 @@
 /* ---------------- i18n ---------------- */
 const T = {
   ar: {
-    appTitle:"حوكمة البيانات", loginSubtitle:"سجّل الدخول للمتابعة",
+    appTitle:"حوكمة البيانات", loginSubtitle:"ادخل إلى مركز التحكم لاتخاذ قرارات حوكمة قابلة للتفسير.",
+    welcome:"مرحبًا بك في ميزان", localFirst:"تشغيل محلي آمن",
+    challengeTeam:"فريق تحدي حوكمة البيانات", techProjects:"قطاع التقنية والمشاريع · عِلم",
+    showcaseEyebrow:"مشروع تحدي حوكمة البيانات في عِلم", showcaseTitle:"حوكمة ذكية. قرار واضح. أثر موثّق.",
+    showcaseBody:"منصة عربية متكاملة تصنّف البيانات، تراقب جودتها، وتتتبّع أثرها وفق معايير NDMO.",
+    capLevels:"مستويات تصنيف", capQuality:"أبعاد للجودة", capLocal:"معالجة محلية",
+    overviewHeroTitle:"حوكمة تتحول من سياسة إلى قرار قابل للتنفيذ",
+    overviewHeroBody:"رؤية موحّدة للتصنيف والجودة وتتبع الأثر، مع دليل وتبرير لكل قرار.",
+    benchmarkTitle:"الأداء المقاس", benchmarkSub:"نتائج موثقة في التقرير الفني", benchmarkTag:"خط أساس متحقق",
+    benchmarkClass:"دقة التصنيف", benchmarkPrecision:"دقة اكتشاف الجودة", benchmarkRecall:"استرجاع الجودة",
+    benchmarkNote:"دقة التصنيف 81.7% تخص خط الأساس دون النموذج؛ يُقاس أداء ALLaM-7B بعد التشغيل الفعلي.",
     username:"اسم المستخدم", password:"كلمة المرور", login:"دخول", logout:"خروج",
     demoHint:"تجريبي: admin / admin123 — أو viewer / viewer123",
     overview:"نظرة عامة", records:"السجلات", quality:"الجودة", evaluation:"التقييم",
@@ -28,7 +38,17 @@ const T = {
     loading:"جارٍ التحميل…", adminOnly:"للمدير فقط",
   },
   en: {
-    appTitle:"Data Governance", loginSubtitle:"Sign in to continue",
+    appTitle:"Data Governance", loginSubtitle:"Enter the control center for explainable governance decisions.",
+    welcome:"Welcome to Mizan", localFirst:"Secure local-first",
+    challengeTeam:"Data Governance Challenge Team", techProjects:"Technology & Projects · Elm",
+    showcaseEyebrow:"Elm Data Governance Challenge Project", showcaseTitle:"Smart governance. Clear decisions. Traceable impact.",
+    showcaseBody:"An Arabic-first platform that classifies data, monitors quality, and traces lineage against NDMO standards.",
+    capLevels:"classification levels", capQuality:"quality dimensions", capLocal:"local processing",
+    overviewHeroTitle:"Turning governance policy into an actionable decision",
+    overviewHeroBody:"One view across classification, quality, and lineage, with evidence and rationale for every decision.",
+    benchmarkTitle:"Measured performance", benchmarkSub:"Verified results from the technical report", benchmarkTag:"Verified baseline",
+    benchmarkClass:"Classification accuracy", benchmarkPrecision:"Quality precision", benchmarkRecall:"Quality recall",
+    benchmarkNote:"81.7% is the offline classification baseline; ALLaM-7B performance is measured after a live run.",
     username:"Username", password:"Password", login:"Sign in", logout:"Sign out",
     demoHint:"Demo: admin / admin123 — or viewer / viewer123",
     overview:"Overview", records:"Records", quality:"Quality", evaluation:"Evaluation",
@@ -65,6 +85,15 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;
 const lvlLabel = l => state.lang === "ar" ? l : (LVL_EN[l] || l);
 const lvlBadge = l => `<span class="lvl ${LVL_CLASS[l]||""}">${esc(lvlLabel(l))}</span>`;
 const $ = s => document.querySelector(s);
+const NAV_ICONS = {
+  overview:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h6V4H4v9Zm10 7h6v-9h-6v9ZM4 20h6v-3H4v3Zm10-13h6V4h-6v3Z"/></svg>',
+  records:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>',
+  quality:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.6 2.9 8.1 7 10 4.1-1.9 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg>',
+  evaluation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>',
+  lineage:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="12" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8.5 6h2a3 3 0 0 1 3 3v0a3 3 0 0 0 3 3h-1M8.5 18h2a3 3 0 0 0 3-3v0a3 3 0 0 1 3-3"/></svg>',
+  classify:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.3 4.7L18 9l-4.7 1.3L12 15l-1.3-4.7L6 9l4.7-1.3L12 3Z"/><path d="m18.5 15 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z"/></svg>',
+  users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3.5 20v-2.5A4.5 4.5 0 0 1 8 13h2a4.5 4.5 0 0 1 4.5 4.5V20M16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V20"/></svg>'
+};
 
 /* ---------------- API ---------------- */
 async function api(path, opts={}){
@@ -118,10 +147,12 @@ function buildNav(){
     if (adminOnly && !isAdmin()) return;
     const b = document.createElement("button");
     b.className = "nav-item" + (key===state.section ? " active" : "");
-    b.innerHTML = `<span class="t">${esc(t(key))}</span>`;
+    b.setAttribute("aria-label", t(key));
+    b.innerHTML = `<span class="nav-icon">${NAV_ICONS[key]||""}</span><span class="t">${esc(t(key))}</span>`;
     b.onclick = () => { state.section = key; buildNav(); route(key); };
     nav.appendChild(b);
   });
+  nav.insertAdjacentHTML("beforeend", `<div class="nav-project"><b>${esc(t("challengeTeam"))}</b><span>${esc(t("techProjects"))}</span></div>`);
 }
 function route(key){
   const fn = (SECTIONS.find(s => s[0]===key) || SECTIONS[0])[1];
@@ -154,17 +185,31 @@ async function renderOverview(){
      <div class="track"><div class="fill" style="width:${Math.max(2,Math.round(c/maxD*100))}%;background:#185fa5"></div></div>
      <span class="cnt">${c.toLocaleString()}</span></div>`).join("") : `<p class="muted">—</p>`;
   $("#content").innerHTML = `
-    <h2 class="section-title">${esc(t("overview"))}</h2>
-    <p class="section-sub">Mizan</p>
+    <section class="overview-hero">
+      <div><span class="hero-kicker">${esc(t("techProjects"))}</span>
+      <h2>${esc(t("overviewHeroTitle"))}</h2>
+      <p>${esc(t("overviewHeroBody"))}</p></div>
+      <div class="hero-seal"><div><strong>M</strong><span>MIZAN</span></div></div>
+    </section>
     ${adminBtns}
     <div class="metrics">
-      <div class="metric"><div class="label">${esc(t("m_total"))}</div><div class="value">${(s.total_records||0).toLocaleString()}</div></div>
-      <div class="metric"><div class="label">${esc(t("m_classified"))}</div><div class="value">${(s.classified||0).toLocaleString()}</div></div>
-      <div class="metric"><div class="label">${esc(t("m_review"))}</div><div class="value">${(s.needs_review||0).toLocaleString()}</div></div>
-      <div class="metric"><div class="label">${esc(t("m_quality"))}</div><div class="value">${Object.values(dim).reduce((a,b)=>a+b,0).toLocaleString()}</div></div>
+      <div class="metric green"><div class="label">${esc(t("m_total"))}</div><div class="value">${(s.total_records||0).toLocaleString()}</div></div>
+      <div class="metric blue"><div class="label">${esc(t("m_classified"))}</div><div class="value">${(s.classified||0).toLocaleString()}</div></div>
+      <div class="metric gold"><div class="label">${esc(t("m_review"))}</div><div class="value">${(s.needs_review||0).toLocaleString()}</div></div>
+      <div class="metric red"><div class="label">${esc(t("m_quality"))}</div><div class="value">${Object.values(dim).reduce((a,b)=>a+b,0).toLocaleString()}</div></div>
     </div>
-    <div class="card"><h3>${esc(t("levelDist"))}</h3><div style="margin-top:12px">${bars}</div></div>
-    <div class="card"><h3>${esc(t("qualityByDim"))}</h3><div style="margin-top:12px">${dimBars}</div></div>`;
+    <div class="dashboard-grid">
+      <div class="card"><h3>${esc(t("levelDist"))}</h3><div style="margin-top:15px">${bars}</div></div>
+      <div class="card"><h3>${esc(t("qualityByDim"))}</h3><div style="margin-top:15px">${dimBars}</div></div>
+    </div>
+    <div class="card benchmark" style="margin-top:18px">
+      <div class="benchmark-head"><div><h3>${esc(t("benchmarkTitle"))}</h3><p>${esc(t("benchmarkSub"))}</p></div><span class="benchmark-tag">${esc(t("benchmarkTag"))}</span></div>
+      <div class="benchmark-values">
+        <div class="benchmark-value"><b>81.7%</b><span>${esc(t("benchmarkClass"))}</span></div>
+        <div class="benchmark-value"><b>97.4%</b><span>${esc(t("benchmarkPrecision"))}</span></div>
+        <div class="benchmark-value"><b>97.1%</b><span>${esc(t("benchmarkRecall"))}</span></div>
+      </div><p class="benchmark-note">${esc(t("benchmarkNote"))}</p>
+    </div>`;
   if (isAdmin()){
     $("#run-pipe").onclick = async () => {
       $("#pipe-status").textContent = t("running");
