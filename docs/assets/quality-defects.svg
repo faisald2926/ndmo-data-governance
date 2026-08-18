@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
   <title id="title">Catalogued data-quality defects by NDMO dimension</title>
-  <desc id="desc">Completeness 397, validity 110, accuracy 98, uniqueness 68, consistency 53, timeliness 35; 761 defects total.</desc>
+  <desc id="desc">Completeness 659, validity 110, accuracy 98, uniqueness 68, consistency 53, timeliness 35; 1,023 defects total.</desc>
   <defs><linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0c5f4c"/><stop offset="1" stop-color="#25ae83"/></linearGradient><filter id="s" x="-10%" y="-50%" width="120%" height="200%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#0a3a2f" flood-opacity=".16"/></filter></defs>
   <rect width="1200" height="680" rx="26" fill="#f7faf9"/>
   <text x="65" y="72" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#10221e">QUALITY DEFECT PROFILE</text>
-  <text x="65" y="108" font-family="Arial,sans-serif" font-size="19" fill="#60716b">761 catalogued findings across the six NDMO quality dimensions</text>
+  <text x="65" y="108" font-family="Arial,sans-serif" font-size="19" fill="#60716b">1,023 catalogued findings across the six NDMO quality dimensions</text>
   <g font-family="Arial,sans-serif" font-size="20" fill="#263b35" text-anchor="end">
     <text x="250" y="188">Completeness</text><text x="250" y="267">Validity</text><text x="250" y="346">Accuracy</text><text x="250" y="425">Uniqueness</text><text x="250" y="504">Consistency</text><text x="250" y="583">Timeliness</text>
   </g>
   <g fill="#e4edea"><rect x="280" y="157" width="810" height="43" rx="12"/><rect x="280" y="236" width="810" height="43" rx="12"/><rect x="280" y="315" width="810" height="43" rx="12"/><rect x="280" y="394" width="810" height="43" rx="12"/><rect x="280" y="473" width="810" height="43" rx="12"/><rect x="280" y="552" width="810" height="43" rx="12"/></g>
-  <g fill="url(#bar)" filter="url(#s)"><rect x="280" y="157" width="810" height="43" rx="12"/><rect x="280" y="236" width="224" height="43" rx="12"/><rect x="280" y="315" width="200" height="43" rx="12"/><rect x="280" y="394" width="139" height="43" rx="12"/><rect x="280" y="473" width="108" height="43" rx="12"/><rect x="280" y="552" width="72" height="43" rx="12"/></g>
-  <g font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#10221e"><text x="1115" y="188">397</text><text x="529" y="267">110</text><text x="505" y="346">98</text><text x="444" y="425">68</text><text x="413" y="504">53</text><text x="377" y="583">35</text></g>
-  <g transform="translate(844 105)"><rect width="246" height="64" rx="16" fill="#e6f6f0" stroke="#b8ddcf"/><text x="22" y="28" font-family="Arial,sans-serif" font-size="14" fill="#60716b">LARGEST OPPORTUNITY</text><text x="22" y="50" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#0c5f4c">Completeness · 52.2%</text></g>
+  <g fill="url(#bar)" filter="url(#s)"><rect x="280" y="157" width="810" height="43" rx="12"/><rect x="280" y="236" width="135" height="43" rx="12"/><rect x="280" y="315" width="120" height="43" rx="12"/><rect x="280" y="394" width="84" height="43" rx="12"/><rect x="280" y="473" width="65" height="43" rx="12"/><rect x="280" y="552" width="43" height="43" rx="12"/></g>
+  <g font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#10221e"><text x="1115" y="188">659</text><text x="440" y="267">110</text><text x="425" y="346">98</text><text x="389" y="425">68</text><text x="370" y="504">53</text><text x="348" y="583">35</text></g>
+  <g transform="translate(844 105)"><rect width="246" height="64" rx="16" fill="#e6f6f0" stroke="#b8ddcf"/><text x="22" y="28" font-family="Arial,sans-serif" font-size="14" fill="#60716b">LARGEST OPPORTUNITY</text><text x="22" y="50" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#0c5f4c">Completeness · 64.4%</text></g>
   <text x="1140" y="640" text-anchor="end" font-family="Arial,sans-serif" font-size="15" fill="#71817c">Source: project technical report · June 2026</text>
 </svg>

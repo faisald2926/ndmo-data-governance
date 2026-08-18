@@ -24,3 +24,22 @@
 05_documents_register.csv,snippet_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
 06_open_datasets.csv,entity_name_ar,text,no,عام,لا يوجد,rule,Published open data
 06_open_datasets.csv,cr_number,id,no,عام,لا يوجد,rule,Public registry
+08_security_incidents.csv,incident_id,id,no,عام,لا يوجد,rule,Surrogate key
+08_security_incidents.csv,opened_date,date,no,عام,لا يوجد,rule,Metadata
+08_security_incidents.csv,severity,category,no,مقيّد,أنشطة الجهات,rule,Operational risk signal
+08_security_incidents.csv,affected_system_ar,text,no,مقيّد,أنشطة الجهات,rule,Asset exposure
+08_security_incidents.csv,incident_title_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+08_security_incidents.csv,incident_summary_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+08_security_incidents.csv,responsible_unit,text,no,مقيّد,أنشطة الجهات,rule,Custodian; required
+09_internal_investigations.csv,case_id,id,no,عام,لا يوجد,rule,Surrogate key
+09_internal_investigations.csv,reported_date,date,no,عام,لا يوجد,rule,Metadata
+09_internal_investigations.csv,case_type,category,no,مقيّد,أنشطة الجهات,rule,Case taxonomy
+09_internal_investigations.csv,subject_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+09_internal_investigations.csv,case_summary_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+09_internal_investigations.csv,handling_unit,text,no,مقيّد,أنشطة الجهات,rule,Custodian; required
+10_strategic_initiatives.csv,initiative_id,id,no,عام,لا يوجد,rule,Surrogate key
+10_strategic_initiatives.csv,created_date,date,no,عام,لا يوجد,rule,Metadata
+10_strategic_initiatives.csv,initiative_title_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+10_strategic_initiatives.csv,description_ar,free_text,maybe,(record-level),(record-level),LLM+keywords,Depends on content
+10_strategic_initiatives.csv,owning_sector,text,no,مقيّد,أنشطة الجهات,rule,Custodian; required
+10_strategic_initiatives.csv,disclosure_status,category,no,مقيّد,أنشطة الجهات,rule,Pre-disclosure flag

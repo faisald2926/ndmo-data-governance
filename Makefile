@@ -33,7 +33,7 @@ eval:          ## Score the last run against the answer keys
 	docker compose exec app python evaluate.py
 
 seed-data:     ## Load the datasets into Postgres as raw_* + answer-key tables
-	docker compose exec app python ingestion/seed_postgres.py
+	docker compose exec app python -m ingestion.seed_postgres
 
 offline-demo:  ## Run the whole pipeline WITHOUT the LLM (rules + keyword fallback)
 	docker compose exec -e LLM_MODE=offline app python pipeline.py --max-per-file 500

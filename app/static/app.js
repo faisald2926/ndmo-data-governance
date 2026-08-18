@@ -11,9 +11,6 @@ const T = {
     capLevels:"مستويات تصنيف", capQuality:"أبعاد للجودة", capLocal:"معالجة محلية",
     overviewHeroTitle:"حوكمة تتحول من سياسة إلى قرار قابل للتنفيذ",
     overviewHeroBody:"رؤية موحّدة للتصنيف والجودة وتتبع الأثر، مع دليل وتبرير لكل قرار.",
-    benchmarkTitle:"الأداء المقاس", benchmarkSub:"نتائج موثقة في التقرير الفني", benchmarkTag:"خط أساس متحقق",
-    benchmarkClass:"دقة التصنيف", benchmarkPrecision:"دقة اكتشاف الجودة", benchmarkRecall:"استرجاع الجودة",
-    benchmarkNote:"دقة التصنيف 81.7% تخص خط الأساس دون النموذج؛ يُقاس أداء ALLaM-7B بعد التشغيل الفعلي.",
     username:"اسم المستخدم", password:"كلمة المرور", login:"دخول", logout:"خروج",
     demoHint:"تجريبي: admin / admin123 — أو viewer / viewer123",
     overview:"نظرة عامة", records:"السجلات", quality:"الجودة", evaluation:"التقييم",
@@ -46,9 +43,6 @@ const T = {
     capLevels:"classification levels", capQuality:"quality dimensions", capLocal:"local processing",
     overviewHeroTitle:"Turning governance policy into an actionable decision",
     overviewHeroBody:"One view across classification, quality, and lineage, with evidence and rationale for every decision.",
-    benchmarkTitle:"Measured performance", benchmarkSub:"Verified results from the technical report", benchmarkTag:"Verified baseline",
-    benchmarkClass:"Classification accuracy", benchmarkPrecision:"Quality precision", benchmarkRecall:"Quality recall",
-    benchmarkNote:"81.7% is the offline classification baseline; ALLaM-7B performance is measured after a live run.",
     username:"Username", password:"Password", login:"Sign in", logout:"Sign out",
     demoHint:"Demo: admin / admin123 — or viewer / viewer123",
     overview:"Overview", records:"Records", quality:"Quality", evaluation:"Evaluation",
@@ -201,14 +195,6 @@ async function renderOverview(){
     <div class="dashboard-grid">
       <div class="card"><h3>${esc(t("levelDist"))}</h3><div style="margin-top:15px">${bars}</div></div>
       <div class="card"><h3>${esc(t("qualityByDim"))}</h3><div style="margin-top:15px">${dimBars}</div></div>
-    </div>
-    <div class="card benchmark" style="margin-top:18px">
-      <div class="benchmark-head"><div><h3>${esc(t("benchmarkTitle"))}</h3><p>${esc(t("benchmarkSub"))}</p></div><span class="benchmark-tag">${esc(t("benchmarkTag"))}</span></div>
-      <div class="benchmark-values">
-        <div class="benchmark-value"><b>81.7%</b><span>${esc(t("benchmarkClass"))}</span></div>
-        <div class="benchmark-value"><b>97.4%</b><span>${esc(t("benchmarkPrecision"))}</span></div>
-        <div class="benchmark-value"><b>97.1%</b><span>${esc(t("benchmarkRecall"))}</span></div>
-      </div><p class="benchmark-note">${esc(t("benchmarkNote"))}</p>
     </div>`;
   if (isAdmin()){
     $("#run-pipe").onclick = async () => {

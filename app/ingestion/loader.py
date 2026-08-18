@@ -6,11 +6,12 @@ import pandas as pd
 from models import DataRecord
 from quality.engine import ID_COL
 
-# The six entity tables that flow through the pipeline.
+# The nine entity tables that flow through the pipeline.
 SOURCE_FILES = [
     "01_vendors_master.csv", "02_invoices.csv", "03_employees_payroll.csv",
     "04_citizen_service_requests.csv", "05_documents_register.csv",
-    "06_open_datasets.csv",
+    "06_open_datasets.csv", "08_security_incidents.csv",
+    "09_internal_investigations.csv", "10_strategic_initiatives.csv",
 ]
 
 # How to build the free-text blob the classifier reasons over.
@@ -18,6 +19,12 @@ FREE_TEXT = {
     "04_citizen_service_requests.csv": lambda r: str(r.get("request_text_ar", "") or ""),
     "05_documents_register.csv":
         lambda r: f"{r.get('title_ar', '')} {r.get('snippet_ar', '')}".strip(),
+    "08_security_incidents.csv":
+        lambda r: f"{r.get('incident_title_ar', '')} {r.get('incident_summary_ar', '')}".strip(),
+    "09_internal_investigations.csv":
+        lambda r: f"{r.get('subject_ar', '')} {r.get('case_summary_ar', '')}".strip(),
+    "10_strategic_initiatives.csv":
+        lambda r: f"{r.get('initiative_title_ar', '')} {r.get('description_ar', '')}".strip(),
 }
 
 

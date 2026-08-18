@@ -148,7 +148,13 @@ def records(level: str | None = None, source_file: str | None = None,
         q = q.filter(Classification.source_file == source_file)
     if needs_review is not None:
         q = q.filter(Classification.needs_review.is_(needs_review))
-    rows = q.order_by(Classification.id).offset(offset).limit(limit).all()
+    # Rows are written one source file at a time, so plain id order returns a
+    # single dataset. Interleave by file instead, so the first page is a real
+    # cross-section of all nine sources (and of all four levels).
+    rank = func.row_number().over(partition_by=Classification.source_file,
+                                  order_by=Classification.id)
+    rows = (q.order_by(rank, Classification.source_file)
+             .offset(offset).limit(limit).all())
     return [{"id": r.id, "source_file": r.source_file, "record_id": r.record_id,
              "ndmo_level": r.ndmo_level, "impact_category": r.impact_category,
              "confidence": r.confidence, "decided_by": r.decided_by, "evidence": r.evidence,

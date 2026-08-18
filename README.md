@@ -61,11 +61,14 @@
 
 | المقياس | النتيجة | نطاق القياس |
 |---|---:|---|
-| دقة التصنيف - خط الأساس دون النموذج | **81.7%** | 4,300 سجل معنّون |
-| دقة اكتشاف عيوب الجودة | **97.4%** | 761 حالة جودة موثقة |
-| استرجاع عيوب الجودة | **97.1%** | 761 حالة جودة موثقة |
+| دقة التصنيف - النظام الهجين مع `ALLaM-7B` | **93.4%** | 1,800 سجل مصنّف في التشغيل |
+| دقة التصنيف - خط الأساس دون النموذج | **85.3%** | 11,543 سجل معنّون |
+| دقة اكتشاف عيوب الجودة | **98.0%** | 1,023 حالة جودة موثقة |
+| استرجاع عيوب الجودة | **97.8%** | 1,023 حالة جودة موثقة |
 
-دقة التصنيف المذكورة هي **خط الأساس دون النموذج** (قواعد + احتياطي بالكلمات المفتاحية)، وليست نتيجة ALLaM-7B الإنتاجية. يمكن قياس نتيجة النموذج الفعلية بعد تشغيل خط المعالجة ثم التقييم.
+الرقمان مقيسان بتشغيل فعلي لا بتقدير، لكن **نطاقيهما مختلفان**: الهجين يُقاس على السجلات المصنّفة في التشغيل (`--max-per-file 300` أي 300 سجل لكل مصدر)، وخط الأساس دون النموذج يُقاس على كامل مفاتيح الإجابات. تُعاد النتيجتان بتشغيل `pipeline.py` ثم `evaluate.py`.
+
+أثر تشغيل النموذج مركّز في المستوى الأعلى حساسية: استرجاع «سري للغاية» ينتقل من **45.1% إلى 86.5%**، وتنخفض حالات التصنيف الأدنى من الصحيح (خطر التسريب) من 138 إلى 58 دون زيادة في التصنيف الزائد. اختير هذا الإعداد على نصف تطوير وتحقّق على نصف محجوب (93.33% ← 93.57%).
 
 ## ماذا تقول البيانات؟
 
@@ -76,15 +79,17 @@
   </tr>
 </table>
 
-- يتصدر **الاكتمال** فرص التحسين بـ397 حالة من أصل 761.
-- تغطي البيئة **17,863 سجلًا اصطناعيًا** موزعة على ستة مصادر واقعية البنية.
-- تتضمن مفاتيح الإجابات 4,300 سجل معنّون لتقييم التصنيف آليًا.
+- يتصدر **الاكتمال** فرص التحسين بـ659 حالة من أصل 1,023.
+- تغطي البيئة **25,106 سجلًا اصطناعيًا** موزعة على تسعة مصادر واقعية البنية.
+- تتضمن مفاتيح الإجابات 11,543 سجلًا معنّونًا لتقييم التصنيف آليًا.
+- تمثّل السجلات المصنّفة **سري** و**سري للغاية** معًا **25.0%** من إجمالي الصفوف (6,277 سجلًا)، بواقع 4,996 «سري» و1,281 «سري للغاية».
 
 ## كيف يعمل التصنيف؟
 
 1. **قواعد وأنماط حتمية:** الهوية الوطنية عبر Luhn، الآيبان عبر mod-97، الجوال، الرقم الضريبي، ومعجم أعمدة عربي/إنجليزي.
 2. **نموذج محلي:** ALLaM-7B يعالج النص الحر والحالات الغامضة دون إرسال البيانات إلى خدمة خارجية.
-3. **محرك سياسات:** يطبق المستوى الأعلى عند التجميع، ويستخدم «مقيّد» كافتراضي آمن، ويحدد الحالات التي تحتاج مراجعة.
+3. **شبكة أمان بالكلمات المفتاحية:** معجم عربي حتمي يعمل دائمًا، لكن صلاحيته محصورة في *رفع* التصنيف إلى «سري للغاية» فقط - وهو المستوى الوحيد الذي يقلّل النموذج من شأنه. توسيع صلاحيتها إلى بقية المستويات يخفض الدقة الكلية إلى 77%.
+4. **محرك سياسات:** يطبق المستوى الأعلى عند التجميع، ويستخدم «مقيّد» كافتراضي آمن، ويحدد الحالات التي تحتاج مراجعة.
 
 كل قرار يعيد المستوى، والثقة، والدليل، والتبرير، وطريقة اتخاذ القرار.
 
@@ -133,13 +138,18 @@ docker compose exec app python evaluate.py
 
 ### Verified baseline
 
-The included answer keys make evaluation reproducible: **81.7% offline classification accuracy**, **97.4% data-quality precision**, and **97.1% data-quality recall**. The classification figure is the rules/keyword baseline, not a claimed ALLaM-7B production score.
+The included answer keys make evaluation reproducible: **93.4% hybrid classification accuracy** with ALLaM-7B live (n=1,800 records classified in the run), **85.3% offline classification accuracy** (n=11,543), **98.0% data-quality precision**, and **97.8% data-quality recall** (1,023 catalogued defects). Note the two classification figures use different denominators — the hybrid score covers the rows classified under `--max-per-file 300`, the offline baseline covers the full answer key.
+
+The model's contribution is concentrated in the most sensitive level: Top-secret recall moves from **45.1% to 86.5%**, and under-classifications (the leak-risk direction) fall from 138 to 58 with no increase in over-classification. The configuration was selected on a dev half and validated on a held-out half (93.33% → 93.57%).
+
+The corpus is deliberately balanced for sensitivity: **Secret + Top secret = 25.0% of all 25,106 rows** (6,277 records), spread across the documents register and three classified registers — security incidents, internal investigations, and pre-disclosure strategic initiatives. Roughly 12% of the confidential records carry no level keyword at all, so the offline baseline falls back to NDMO's safe default (مقيّد) and only the LLM layer can resolve them.
 
 ### Repository map
 
 ```text
 app/        FastAPI API, classification, quality, lineage, ingestion, auth, bilingual UI
 data/       Synthetic datasets and evaluation answer keys
+scripts/    Corpus expansion + Postgres seed regeneration
 db/         PostgreSQL bootstrap seed
 docs/       Project visuals recreated from the June 2026 technical report
 prompts/    NDMO system prompt

@@ -21,6 +21,9 @@ ID_COL = {
     "04_citizen_service_requests.csv": "request_id",
     "05_documents_register.csv": "doc_id",
     "06_open_datasets.csv": "record_id",
+    "08_security_incidents.csv": "incident_id",
+    "09_internal_investigations.csv": "case_id",
+    "10_strategic_initiatives.csv": "initiative_id",
 }
 
 # Per-file rule configuration
@@ -58,6 +61,12 @@ RULES = {
     # metadata); such records default to Restricted until reviewed.
     "05_documents_register.csv": {"required": ["current_label"], "unique": "doc_id"},
     "06_open_datasets.csv": {"unique": "record_id"},
+    # Classified registers: the owning unit is mandatory NDMO custodianship
+    # metadata — a classified record with no accountable owner is a governance
+    # gap, so a blank value is reported as a Completeness defect.
+    "08_security_incidents.csv": {"required": ["responsible_unit"], "unique": "incident_id"},
+    "09_internal_investigations.csv": {"required": ["handling_unit"], "unique": "case_id"},
+    "10_strategic_initiatives.csv": {"required": ["owning_sector"], "unique": "initiative_id"},
 }
 
 

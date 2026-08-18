@@ -40,6 +40,25 @@ def record_pipeline_lineage(session, dataset_levels: dict):
          derived_level=report_level,
          note="قاعدة التجميع: التقرير يرث المستوى الأعلى من مصادره => "
               f"{report_level}")
+
+    # Second chain: the governance report aggregates every classified dataset.
+    # Its sources span several levels, so this is where the "highest level wins"
+    # rule is actually visible — the spend chain above has two Restricted inputs
+    # and therefore cannot demonstrate it.
+    overall = ndmo.highest(list(dataset_levels.values()))
+    present = [lvl for lvl in ndmo.LEVELS if lvl in set(dataset_levels.values())]
+    emit(session, "classify_all_sources", "COMPLETE",
+         inputs=[{"namespace": "files", "name": f, "level": lvl}
+                 for f, lvl in sorted(dataset_levels.items())],
+         outputs=[{"namespace": "db", "name": "classifications"}],
+         derived_level=overall,
+         note=f"{len(dataset_levels)} مصادر بمستويات مختلفة: " + " · ".join(present))
+    emit(session, "build_governance_report", "COMPLETE",
+         inputs=[{"namespace": "db", "name": "classifications"}],
+         outputs=[{"namespace": "report", "name": "ndmo_governance_report"}],
+         derived_level=overall,
+         note="قاعدة التجميع: أعلى مستوى بين المصادر ("
+              + " · ".join(present) + f") => التقرير يرث «{overall}»")
     session.flush()
     return report_level
 
